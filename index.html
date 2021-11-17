@@ -7,6 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="memebers-list">
+        <h1>Hi Vue</h1>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        new Vue({
+            el:'#members-list',
+            data:{
+                header: 'These are the office Memebers!'
+            }
+        })
+    </script>    
 </body>
 </html>
