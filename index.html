@@ -31,8 +31,8 @@
         <ul>
             <li v-for="item in items">{{item}}</li>
         </ul>
-        <p v-if="items.length ===0">Nice Job! You have completed the items</p>
-        <div>
+        <p v-if="items.length ===0">Nice Job You have completed the items</p>
+        <div v-if ="state ==='edit'" class="add-item-form">
             <input v-model="newItem" type="text" placeholder="Add an Item" v-on:keyup.enter="saveItem">
             <!--v:on can be replaced by @sign-->
             <button class="btn btn-primary" @click="saveItem"> Save Item</button>
@@ -44,6 +44,7 @@
         var myList = new Vue({
             el:'#members-list',
             data:{
+                state:'default',
                 header: 'Items Description',
                 newItem: '',
                 items:[
