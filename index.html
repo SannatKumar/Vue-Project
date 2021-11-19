@@ -12,8 +12,8 @@
         <div class="header">
             <header>
                 <h1 id="main-title">{{header? header :'Welcome'}}</h1>
-                <button class="btn btn-primary">Add Item</button>
-                <button class="btn btn-cancel">Cancel</button>
+                <button v-if="state==='default'" class="btn btn-primary" @click="changeState('edit')">Add Item</button>
+                <button v-else class="btn btn-cancel" @click="changeState('default')">Cancel</button>
             </header>
         </div>
         <h1>Welcome Aksu User</h1>
@@ -59,10 +59,17 @@
                  ]
             },
             methods:{
-                saveItem: function(){
+                saveItem: function()
+                {
                     this.items.push(this.newItem);
                     this.newItem = '';
-                }
+                },
+                changeState: function(newState)
+                {
+                    this.state=newState;
+                    this.newItem ='';
+
+                }                
             }
         });
     </script>    
