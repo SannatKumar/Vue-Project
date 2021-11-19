@@ -53,15 +53,27 @@
                 header: 'AksuEasy',
                 newItem: '',
                 items:[
-                //     '10 Water Bottles',
-                //     '2 Cartoons of Milk',
-                //     '20 Posti Mainoksia',
+                    {
+                        label: '10 Water Bottles',
+                        purchased: false,
+                    },
+                    {
+                        label: '2 Cartoons of Milk',
+                        purchased: true,
+                    },
+                    {
+                        label: '20 Posti Mainoksia',
+                        purchased: true,
+                    }                   
                  ]
             },
             methods:{
                 saveItem: function()
                 {
-                    this.items.push(this.newItem);
+                    this.items.push({
+                        label: this.newItem,
+                        purchased:false,
+                    });
                     this.newItem = '';
                 },
                 changeState: function(newState)
