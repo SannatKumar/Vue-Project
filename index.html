@@ -20,7 +20,10 @@
         </tr>
 
         <tr>
-            <td>{{header.toLocaleUpperCase()}}</td><!--Inside double moustache only one expression can be executed-->
+            <!--
+            <td>{{header; header.toLocaleUpperCase();}}</td>Inside double moustache only one expression can be executed-->
+            <!--Also, Variables can't be declared and if statements cannt be executed but we can use ternary operator-->
+            <td>{{header? header :'Welcome'}}</td>
         </tr>
         
     </table>
@@ -31,7 +34,7 @@
         new Vue({
             el:'#members-list',
             data:{
-                header: 'Office Members!',
+                header: null,
 
             }
         })
