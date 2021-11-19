@@ -9,25 +9,30 @@
 </head>
 <body>
     <div id="members-list">
-
-        <header>
-            <h1 id="main-title">AksuEasy</h1>
-        </header>
-
+        <div class="header">
+            <header>
+                <h1 id="main-title">{{header? header :'Welcome'}}</h1>
+                <button class="btn btn-primary">Add Item</button>
+                <button class="btn btn-cancel">Cancel</button>
+            </header>
+        </div>
         <h1>Welcome Aksu User</h1>
+
+        <!--
 
         <table>            
             <tr>
                 <th> Members Name</th>
             </tr>
             <tr>
-                <!--
-                <td>{{header; header.toLocaleUpperCase();}}</td>Inside double moustache only one expression can be executed-->
-                <!--Also, Variables can't be declared and if statements cannt be executed but we can use ternary operator-->
-                <td>{{header? header :'Welcome'}}</td>
+                
+                <td>{{header; header.toLocaleUpperCase();}}</td>Inside double moustache only one expression can be executed
+                Also, Variables can't be declared and if statements cannt be executed but we can use ternary operator
+                <td></td>
             </tr>
     
         </table>
+    -->
         <ul>
             <li v-for="item in items">{{item}}</li>
         </ul>
@@ -45,13 +50,13 @@
             el:'#members-list',
             data:{
                 state:'default',
-                header: 'Items Description',
+                header: 'AksuEasy',
                 newItem: '',
                 items:[
-                    // '10 Water Bottles',
-                    // '2 Cartoons of Milk',
-                    // '20 Posti Mainoksia',
-                ]
+                //     '10 Water Bottles',
+                //     '2 Cartoons of Milk',
+                //     '20 Posti Mainoksia',
+                 ]
             },
             methods:{
                 saveItem: function(){
