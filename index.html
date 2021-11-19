@@ -30,6 +30,7 @@
     <ul>
         <li v-for="item in items">{{item}}</li>
     </ul>
+    <input v-model="newItem" type="text" placeholder = "Add an Item">
     </div>
 
     <script src="https://unpkg.com/vue"></script>
@@ -38,6 +39,7 @@
             el:'#members-list',
             data:{
                 header: 'Ok Input',
+                newItem: '',
                 items:[
                     '10 Water Bottles',
                     '2 Cartoons of Milk',
