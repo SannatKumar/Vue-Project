@@ -20,7 +20,7 @@
         </tr>
 
         <tr>
-            <td>{{header.toLocaleUpperCase()}}</td>
+            <td>{{header.toLocaleUpperCase()}}</td><!--Inside double moustache only one expression can be executed-->
         </tr>
         
     </table>
@@ -31,7 +31,7 @@
         new Vue({
             el:'#members-list',
             data:{
-                header: 'These are the office Members!',
+                header: 'Office Members!',
 
             }
         })
