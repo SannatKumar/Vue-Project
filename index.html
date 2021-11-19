@@ -27,17 +27,25 @@
         </tr>
         
     </table>
+    <ul>
+        <li v-for="item in items">{{item}}</li>
+    </ul>
     </div>
 
     <script src="https://unpkg.com/vue"></script>
     <script>
-        new Vue({
+        var myList = new Vue({
             el:'#members-list',
             data:{
                 header: 'Ok Input',
+                items:[
+                    '10 Water Bottles',
+                    '2 Cartoons of Milk',
+                    '20 Posti Mainoksia',
+                ]
 
             }
-        })
+        });
     </script>    
 </body>
 </html>
