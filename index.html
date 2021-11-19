@@ -15,7 +15,6 @@
                 <button v-if="state==='default'" class="btn btn-primary" @click="changeState('edit')">Add Item</button>
                 <button v-else class="btn btn-cancel" @click="changeState('default')">Cancel</button>
             </header>
-            <a v-bind:href ="newItem" target="_blank">Dynamic Link</a>
         </div>
         <h1>Welcome Aksu User</h1>
 
@@ -41,7 +40,7 @@
         <div v-if ="state ==='edit'" class="add-item-form">
             <input v-model="newItem" type="text" placeholder="Add an Item" v-on:keyup.enter="saveItem">
             <!--v:on can be replaced by @sign-->
-            <button class="btn btn-primary" @click="saveItem"> Save Item</button>
+            <button class="btn btn-primary" v-bind:disabled="newItem.length ===0" @click="saveItem"> Save Item</button>
         </div>
     </div>
 
