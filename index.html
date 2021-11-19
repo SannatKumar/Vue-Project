@@ -29,8 +29,8 @@
         <li v-for="item in items">{{item}}</li>
     </ul>
     <div>
-    <input v-model="newItem" type="text" placeholder = "Add an Item" v-on:keyup.enter ="items.push(newItem)"><!--v:on can be replaced by @sign-->
-    <button class = "btn btn-primary" @click="items.push(newItem)"> Save Item</button>
+    <input v-model="newItem" type="text" placeholder = "Add an Item" v-on:keyup.enter ="saveItem"><!--v:on can be replaced by @sign-->
+    <button class = "btn btn-primary" @click="saveItem"> Save Item</button>
     </div>
     </div>
 
@@ -39,14 +39,18 @@
         var myList = new Vue({
             el:'#members-list',
             data:{
-                header: 'Ok Input',
+                header: 'Items Description',
                 newItem: '',
                 items:[
                     '10 Water Bottles',
                     '2 Cartoons of Milk',
                     '20 Posti Mainoksia',
                 ]
-
+            },
+            methods:{
+                saveItem: function(){
+                    this.items.push(this.newItem);
+                }
             }
         });
     </script>    
