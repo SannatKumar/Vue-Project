@@ -12,13 +12,11 @@
         <header>
             <h1 id="main-title">AksuEasy</h1>
         </header>
-            <h1>Hi Vue</h1>
-            <input type="text" v-model="header">
+            <h1>Welcome Aksu User</h1>
     <table>
         <tr>
             <th> Members Name</th>
         </tr>
-
         <tr>
             <!--
             <td>{{header; header.toLocaleUpperCase();}}</td>Inside double moustache only one expression can be executed-->
@@ -30,7 +28,10 @@
     <ul>
         <li v-for="item in items">{{item}}</li>
     </ul>
+    <div>
     <input v-model="newItem" type="text" placeholder = "Add an Item">
+    <button class = "btn btn-primary" v-on:click="items.push(newItem)"> Save Item</button>
+    </div>
     </div>
 
     <script src="https://unpkg.com/vue"></script>
